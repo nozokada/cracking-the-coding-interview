@@ -33,5 +33,5 @@ linked_list = Node(1, Node(2, Node(3, Node(4))))
 linked_list.append(5)
 print(linked_list.get_data())
 
-another_linked_list = linked_list.delete(1)
+another_linked_list = linked_list.delete(5)
 print(another_linked_list.get_data())
