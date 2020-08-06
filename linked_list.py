@@ -3,6 +3,20 @@ class Node:
         self.data: int = data
         self.tail: Node = tail
 
+    def __eq__(self, other):
+        if other is None:
+            return False
+
+        if self.data != other.data:
+            return False
+
+        if self.tail is None:
+            if other.tail is None:
+                return True
+            return False
+
+        return self.tail.__eq__(other.tail)
+
     def append(self, data: int):
         end = Node(data)
         node = self
@@ -26,12 +40,3 @@ class Node:
         if self.tail is None:
             return f'{self.data}'
         return f'{self.data} -> {self.tail.get_data()}'
-
-
-linked_list = Node(1, Node(2, Node(3, Node(4))))
-
-linked_list.append(5)
-print(linked_list.get_data())
-
-another_linked_list = linked_list.delete(5)
-print(another_linked_list.get_data())
