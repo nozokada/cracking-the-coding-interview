@@ -10,6 +10,7 @@ def delete_duplicates(node: Node):
             continue
         n = n.tail
         duplicates_set.add(n.data)
+
     return node
 
 
@@ -23,9 +24,5 @@ def delete_duplicates_in_place(node: Node):
                 continue
             j = j.tail
         i = i.tail
+
     return node
-
-
-linked_list = Node(1, Node(2, Node(3, Node(1))))
-unique_linked_list = delete_duplicates(linked_list)
-print(unique_linked_list.get_data())

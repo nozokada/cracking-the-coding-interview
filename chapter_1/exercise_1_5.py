@@ -11,8 +11,5 @@ def compress(string: str):
             count = 1
     result_str_list.append(f'{prev_char}{count}')
     result_string = ''.join(result_str_list)
+
     return result_string if len(result_string) < len(string) else string
-
-
-test_string = 'aabcccccaaa'
-print(compress(test_string))

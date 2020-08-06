@@ -14,6 +14,8 @@ def rotate(matrix: []):
             # right <- top
             matrix[i][last] = top
 
+    return matrix
+
 
 def print_matrix(matrix: []):
     for row in matrix:
@@ -21,9 +23,3 @@ def print_matrix(matrix: []):
             print(cell, end='\t')
         print()
     print()
-
-
-test_matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
-print_matrix(test_matrix)
-rotate(test_matrix)
-print_matrix(test_matrix)

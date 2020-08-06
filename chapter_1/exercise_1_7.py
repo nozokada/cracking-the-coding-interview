@@ -16,6 +16,8 @@ def set_zeros(matrix: []):
             if row_with_zero[row] or column_with_zero[column]:
                 matrix[row][column] = 0
 
+    return matrix
+
 
 def print_matrix(matrix: []):
     for row in matrix:
@@ -24,8 +26,3 @@ def print_matrix(matrix: []):
         print()
     print()
 
-
-test_matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 0, 11, 12], [13, 14, 15, 16], [17, 18, 19, 20]]
-print_matrix(test_matrix)
-set_zeros(test_matrix)
-print_matrix(test_matrix)

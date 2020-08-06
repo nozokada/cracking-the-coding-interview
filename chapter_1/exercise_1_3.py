@@ -13,10 +13,7 @@ def are_permutations_each_other(str_1: str, str_2: str):
         if char not in counter or counter[char] == 0:
             return False
         counter[char] -= 1
-        print(counter)
+        # print(counter)
+
     return True
 
-
-test_string_1 = '123456789'
-test_string_2 = '928347561'
-print(are_permutations_each_other(test_string_1, test_string_2))
