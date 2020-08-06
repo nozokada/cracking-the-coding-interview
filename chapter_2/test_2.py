@@ -1,6 +1,6 @@
 import unittest
 
-from chapter_2.exercise_2_1 import delete_duplicates
+from chapter_2.exercise_2_1 import delete_duplicates, delete_duplicates_in_place
 from linked_list import Node
 
 
@@ -26,3 +26,4 @@ class Test_2_1(unittest.TestCase):
     def test_delete_duplicates_in_linked_list(self):
         linked_list = Node(1, Node(2, Node(3, Node(1))))
         self.assertEqual(delete_duplicates(linked_list), Node(1, Node(2, Node(3))))
+        self.assertEqual(delete_duplicates_in_place(linked_list), Node(1, Node(2, Node(3))))
