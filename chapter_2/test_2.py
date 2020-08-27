@@ -42,4 +42,4 @@ class Test_2_3(unittest.TestCase):
     def test_delete_middle(self):
         linked_list = Node("a", Node("b", Node("c", Node("d", Node("e")))))
         delete_middle(linked_list)
-        self.assertEqual(linked_list, Node("a", Node("b", Node("d", Node("e")))))
+        self.assertEqual(Node("a", Node("b", Node("d", Node("e")))), linked_list)
