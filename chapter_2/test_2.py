@@ -1,7 +1,8 @@
 import unittest
 
 from chapter_2.exercise_2_1 import delete_duplicates, delete_duplicates_in_place
-from chapter_2.exercise_2_2 import get_last_from, get_size
+from chapter_2.exercise_2_2 import find_last_element_from, get_size
+from chapter_2.exercise_2_3 import find_last_node_from, delete_middle
 from linked_list import Node
 
 
@@ -34,4 +35,11 @@ class Test_2_2(unittest.TestCase):
     def test_get_last_from(self):
         linked_list = Node(1, Node(2, Node(3, Node(4))))
         self.assertEqual(4, get_size(linked_list))
-        self.assertEqual(4, get_last_from(linked_list, 0))
+        self.assertEqual(4, find_last_element_from(linked_list, 0))
+
+
+class Test_2_3(unittest.TestCase):
+    def test_delete_middle(self):
+        linked_list = Node("a", Node("b", Node("c", Node("d", Node("e")))))
+        delete_middle(linked_list)
+        self.assertEqual(linked_list, Node("a", Node("b", Node("d", Node("e")))))

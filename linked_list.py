@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, data: int, tail=None):
-        self.data: int = data
+    def __init__(self, data, tail=None):
+        self.data = data
         self.tail: Node = tail
 
     def __eq__(self, other):
@@ -17,14 +17,14 @@ class Node:
 
         return self.tail.__eq__(other.tail)
 
-    def append(self, data: int):
+    def append(self, data):
         end = Node(data)
         node = self
         while node.tail is not None:
             node = node.tail
         node.tail = end
 
-    def delete(self, data: int):
+    def delete(self, data):
         head = self
         node = head
         if node.data == data:
