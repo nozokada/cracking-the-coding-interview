@@ -10,7 +10,7 @@ def get_size(node: Node):
     return size
 
 
-def get_last_from(node: Node, k: int):
+def find_last_element_from(node: Node, k: int):
     size = get_size(node)
     target_i = size - k - 1
     if target_i < 0:
