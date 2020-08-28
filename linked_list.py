@@ -23,6 +23,7 @@ class Node:
         while node.tail is not None:
             node = node.tail
         node.tail = end
+        return end
 
     def delete(self, data):
         head = self

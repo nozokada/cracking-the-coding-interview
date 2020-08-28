@@ -3,6 +3,7 @@ import unittest
 from chapter_2.exercise_2_1 import delete_duplicates, delete_duplicates_in_place
 from chapter_2.exercise_2_2 import find_last_element_from, get_size
 from chapter_2.exercise_2_3 import find_last_node_from, delete_middle
+from chapter_2.exercise_2_4 import partition
 from linked_list import Node
 
 
@@ -43,3 +44,11 @@ class Test_2_3(unittest.TestCase):
         linked_list = Node("a", Node("b", Node("c", Node("d", Node("e")))))
         delete_middle(linked_list)
         self.assertEqual(Node("a", Node("b", Node("d", Node("e")))), linked_list)
+
+
+class Test_2_4(unittest.TestCase):
+    def test_partition(self):
+        linked_list = Node(4, Node(2, Node(3, Node(1))))
+        another_linked_list = Node(4, Node(5, Node(6, Node(7))))
+        self.assertEqual(Node(2, Node(1, Node(4, Node(3)))), partition(3, linked_list))
+        self.assertEqual(Node(4, Node(5, Node(6, Node(7)))), partition(9, another_linked_list))
