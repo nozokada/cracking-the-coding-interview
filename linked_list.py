@@ -4,8 +4,8 @@ class Node:
         self.tail: Node = tail
 
     def __eq__(self, other):
-        if other is None:
-            return False
+        if type(self) != type(other):
+            raise TypeError('Could not compare different types')
 
         if self.data != other.data:
             return False
@@ -18,23 +18,26 @@ class Node:
         return self.tail.__eq__(other.tail)
 
     def append(self, data):
-        end = Node(data)
-        node = self
-        while node.tail is not None:
-            node = node.tail
-        node.tail = end
-        return end
+        new_node = Node(data)
+        n = self
+        while n.tail is not None:
+            n = n.tail
+        n.tail = new_node
+
+        return new_node
 
     def delete(self, data):
         head = self
-        node = head
-        if node.data == data:
-            return node.tail
-        while node.tail is not None:
-            if node.tail.data == data:
-                node.tail = node.tail.tail
+        if head.data == data:
+            return head.tail
+
+        n = head
+        while n.tail is not None:
+            if n.tail.data == data:
+                n.tail = n.tail.tail
                 return head
-            node = node.tail
+            n = n.tail
+
         return head
 
     def get_data(self):

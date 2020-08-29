@@ -19,9 +19,9 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(linked_list, another_linked_list)
 
     def test_linked_list_delete(self):
-        linked_list = Node(1, Node(2, Node(3)))
+        linked_list = Node(2, Node(3, Node(4)))
         another_linked_list = Node(1, Node(2, Node(3, Node(4))))
-        another_linked_list.delete(4)
+        another_linked_list = another_linked_list.delete(1)
         self.assertEqual(linked_list, another_linked_list)
 
 
