@@ -21,8 +21,8 @@ def delete_duplicates_in_place(node: Node):
         while j.tail is not None:
             if i.data == j.tail.data:
                 j.tail = j.tail.tail
-                continue
-            j = j.tail
+            else:
+                j = j.tail
         i = i.tail
 
     return node
