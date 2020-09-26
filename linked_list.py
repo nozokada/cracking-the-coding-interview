@@ -40,7 +40,7 @@ class Node:
 
         return head
 
-    def get_data(self):
+    def print(self):
         if self.tail is None:
             return f'{self.data}'
-        return f'{self.data} -> {self.tail.get_data()}'
+        return f'{self.data} -> {self.tail.print()}'
