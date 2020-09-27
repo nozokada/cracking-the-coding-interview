@@ -4,7 +4,7 @@ from linked_list import Node
 def get_size(node: Node):
     n = node
     size = 0
-    while n is not None:
+    while n:
         size += 1
         n = n.tail
     return size
@@ -17,7 +17,7 @@ def find_last_element_from(node: Node, k: int):
         raise IndexError
     n = node
     i = 0
-    while n is not None:
+    while n:
         if target_i == i:
             return n.data
         n = n.tail
