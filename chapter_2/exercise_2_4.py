@@ -7,21 +7,21 @@ def partition(value: int, node: Node):
     partition_node = None
 
     n = node
-    while n is not None:
+    while n:
         if n.data >= value:
-            if bigger_nodes is None:
-                bigger_nodes = Node(n.data)
-            else:
+            if bigger_nodes:
                 bigger_nodes.append(n.data)
+            else:
+                bigger_nodes = Node(n.data)
         else:
-            if smaller_nodes is None:
+            if smaller_nodes:
+                partition_node = smaller_nodes.append(n.data)
+            else:
                 smaller_nodes = Node(n.data)
                 partition_node = smaller_nodes
-            else:
-                partition_node = smaller_nodes.append(n.data)
         n = n.tail
 
-    if smaller_nodes is None:
+    if not smaller_nodes:
         return bigger_nodes
 
     partition_node.tail = bigger_nodes
