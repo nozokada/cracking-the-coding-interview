@@ -4,7 +4,7 @@ from linked_list import Node
 
 def delete_middle(node: Node):
     size = get_size(node)
-    n_middle = find_last_node_from(node, int(size / 2))
+    n_middle = find_last(node, int(size / 2))
     n = n_middle
     while n:
         n.data = n.tail.data
@@ -14,7 +14,7 @@ def delete_middle(node: Node):
         n = n.tail
 
 
-def find_last_node_from(node: Node, k: int):
+def find_last(node: Node, k: int):
     size = get_size(node)
     target_i = size - k - 1
     if target_i < 0:
