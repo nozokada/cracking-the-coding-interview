@@ -1,7 +1,7 @@
 from linked_list import Node
 
 
-def add_elements(node_1: Node, node_2: Node):
+def find_sum(node_1: Node, node_2: Node):
     n_1 = node_1
     n_2 = node_2
     n_result = None

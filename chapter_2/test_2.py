@@ -1,6 +1,6 @@
 import unittest
 
-from chapter_2.exercise_2_5 import add_elements
+from chapter_2.exercise_2_5 import find_sum
 from chapter_2.exercise_2_1 import delete_duplicates, delete_duplicates_in_place
 from chapter_2.exercise_2_2 import find_last_element_from, get_size
 from chapter_2.exercise_2_3 import delete_middle
@@ -59,4 +59,4 @@ class Test_2_5(unittest.TestCase):
     def test_add_elements(self):
         linked_list = Node(7, Node(1, Node(6, Node(1))))
         another_linked_list = Node(5, Node(9, Node(2)))
-        self.assertEqual(Node(2, Node(1, Node(9, Node(1)))), add_elements(linked_list, another_linked_list))
+        self.assertEqual(Node(2, Node(1, Node(9, Node(1)))), find_sum(linked_list, another_linked_list))
