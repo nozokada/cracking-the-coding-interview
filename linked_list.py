@@ -4,14 +4,17 @@ class Node:
         self.tail: Node = tail
 
     def __eq__(self, other):
+        if not other:
+            return False
+
         if type(self) != type(other):
             raise TypeError('Could not compare different types')
 
         if self.data != other.data:
             return False
 
-        if self.tail is None:
-            if other.tail is None:
+        if not self.tail:
+            if not other.tail:
                 return True
             return False
 
