@@ -8,9 +8,8 @@ def fibonacci_gen(n):
             a, b = b, a + b
             yield b
 
-    gen = fibonacci()
     i = 0
-    for f in gen:
+    for f in fibonacci():
         if i == n:
             return f
         i += 1
