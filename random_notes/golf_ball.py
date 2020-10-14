@@ -1,16 +1,16 @@
-x = 1000
-highest = 1000
-lowest = 1
+x = 500
+highest_floor = 1000
+lowest_floor = 1
 
 
 def drop_first_ball(low: int, high: int, cost: int):
     cost += 1
-    current = (low + high) // 2
+    drop_from = (low + high) // 2
 
-    if current >= x:
-        return low, current, cost
+    if drop_from >= x:
+        return low, drop_from, cost
 
-    return drop_first_ball(current + 1, high, cost)
+    return drop_first_ball(drop_from + 1, high, cost)
 
 
 def drop_second_ball(low: int, high: int, cost: int):
@@ -20,6 +20,7 @@ def drop_second_ball(low: int, high: int, cost: int):
             return floor, cost
 
 
-safe, not_safe, cost = drop_first_ball(lowest, highest, 0)
-answer, cost = drop_second_ball(safe, not_safe, cost)
-print(f'X: {answer}\nTotal Cost: {cost}')
+safe, not_safe, total_cost = drop_first_ball(lowest_floor, highest_floor, 0)
+print(f'X is somewhere between {safe} and {not_safe}')
+answer, total_cost = drop_second_ball(safe, not_safe, total_cost)
+print(f'X: {answer}\nTotal Cost: {total_cost}')
