@@ -18,7 +18,7 @@ class Node:
     def append(self, data):
         new_node = Node(data)
         n = self
-        while n.tail is not None:
+        while n.tail:
             n = n.tail
         n.tail = new_node
 
@@ -30,7 +30,7 @@ class Node:
             return head.tail
 
         n = head
-        while n.tail is not None:
+        while n.tail:
             if n.tail.data == data:
                 n.tail = n.tail.tail
                 return head
@@ -39,6 +39,6 @@ class Node:
         return head
 
     def print(self):
-        if self.tail is None:
+        if not self.tail:
             return f'{self.data}'
         return f'{self.data} -> {self.tail.print()}'
