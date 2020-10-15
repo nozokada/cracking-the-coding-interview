@@ -5,6 +5,7 @@ from chapter_2.exercise_2_1 import delete_duplicates, delete_duplicates_in_place
 from chapter_2.exercise_2_2 import find_last_element_from, get_size
 from chapter_2.exercise_2_3 import delete_middle
 from chapter_2.exercise_2_4 import partition
+from chapter_2.exercise_2_6 import get_first_in_loop
 from linked_list import Node
 
 
@@ -65,3 +66,11 @@ class Test_2_5(unittest.TestCase):
         linked_list = Node(6, Node(1, Node(7)))
         another_linked_list = Node(1, Node(2, Node(9, Node(5))))
         self.assertEqual(Node(1, Node(9, Node(1, Node(2)))), find_sum_reverse(linked_list, another_linked_list))
+
+
+class Test_2_6(unittest.TestCase):
+    def test_get_first_in_loop(self):
+        first_node_in_loop = Node('C')
+        linked_list = Node('A', Node('B', first_node_in_loop))
+        first_node_in_loop.tail = Node('D', Node('E', first_node_in_loop))
+        self.assertEqual(first_node_in_loop.data, get_first_in_loop(linked_list).data)
