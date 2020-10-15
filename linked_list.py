@@ -13,7 +13,7 @@ class Node:
         if self.data != other.data:
             return False
 
-        return self.tail.__eq__(other.tail)
+        return self.tail == other.tail
 
     def append(self, data):
         new_node = Node(data)
