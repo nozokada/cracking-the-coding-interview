@@ -6,6 +6,7 @@ from chapter_2.exercise_2_2 import find_last_element_from, get_size
 from chapter_2.exercise_2_3 import delete_middle
 from chapter_2.exercise_2_4 import partition
 from chapter_2.exercise_2_6 import get_first_in_loop
+from chapter_2.exercise_2_7 import is_palindrome
 from linked_list import Node
 
 
@@ -74,3 +75,11 @@ class Test_2_6(unittest.TestCase):
         linked_list = Node('A', Node('B', first_node_in_loop))
         first_node_in_loop.tail = Node('D', Node('E', first_node_in_loop))
         self.assertEqual(first_node_in_loop.data, get_first_in_loop(linked_list).data)
+
+
+class Test_2_7(unittest.TestCase):
+    def test_palindrome(self):
+        linked_list = Node('A', Node('B', Node('C', Node('C', Node('B', Node('A'))))))
+        another_linked_list = Node('A', Node('B', Node('C', Node('B', Node('A')))))
+        self.assertTrue(is_palindrome(linked_list))
+        self.assertTrue(is_palindrome(another_linked_list))
