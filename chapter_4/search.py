@@ -1,4 +1,4 @@
-from tree import Node
+from binary_tree import Node
 
 
 def search_dft_r(root: Node):
