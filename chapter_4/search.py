@@ -1,17 +1,17 @@
 from binary_tree import Node
 
 
-def search_dft_r(root: Node):
+def do_dfs_r(root: Node):
     if not root:
         return
     print(root.data)
     root.visited = True
     for n in root.adjacent:
         if not n.visited:
-            search_dft_r(n)
+            do_dfs_r(n)
 
 
-def search_dft_stack(root: Node):
+def do_dfs_stack(root: Node):
     root.visited = True
     stack = [root]
     while stack:
@@ -23,7 +23,7 @@ def search_dft_stack(root: Node):
                 stack.append(n)
 
 
-def search_bft_queue(root: Node):
+def do_bfs_queue(root: Node):
     root.visited = True
     queue = [root]
     while queue:
