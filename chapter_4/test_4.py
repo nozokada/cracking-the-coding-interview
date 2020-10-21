@@ -3,22 +3,29 @@ import unittest
 from binary_tree import Node
 from chapter_4.exercise_4_1 import is_balanced
 from chapter_4.exercise_4_2 import is_route
+from chapter_4.traversal import do_dfs_r
 
 
 class TestBinaryTree(unittest.TestCase):
+    def setUp(self):
+        self.tree = Node(1,
+                         Node(2,
+                              Node(3,
+                                   Node(4), Node(5)),
+                              Node(6,
+                                   Node(7), Node(8))),
+                         Node(9,
+                              Node(10,
+                                   Node(11), Node(12)),
+                              Node(13,
+                                   Node(14), Node(15))))
+
     def test_print(self):
-        tree = Node(1,
-                    Node(2,
-                         Node(3,
-                              Node(4), Node(5)),
-                         Node(6,
-                              Node(7), Node(8))),
-                    Node(9,
-                         Node(10,
-                              Node(11), Node(12)),
-                         Node(13,
-                              Node(14), Node(15))))
-        tree.print()
+        self.tree.print()
+        print()
+
+    def test_traverse(self):
+        self.tree.traverse(do_dfs_r)
 
 
 class Test_4_1(unittest.TestCase):
