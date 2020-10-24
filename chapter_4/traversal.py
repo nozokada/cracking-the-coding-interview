@@ -1,7 +1,7 @@
-from binary_tree import Node
+from binary_tree import BSTNode
 
 
-def do_dfs_r(root: Node):
+def do_dfs_r(root: BSTNode):
     if not root:
         return
     print(root.data, end=' ')
@@ -9,7 +9,7 @@ def do_dfs_r(root: Node):
     do_dfs_r(root.right)
 
 
-def do_dfs_stack(root: Node):
+def do_dfs_stack(root: BSTNode):
     stack = [root]
     while stack:
         node = stack.pop()
@@ -20,7 +20,7 @@ def do_dfs_stack(root: Node):
         stack.append(node.right)
 
 
-def do_bfs_queue(root: Node):
+def do_bfs_queue(root: BSTNode):
     queue = [root]
     while queue:
         node = queue.pop(0)
