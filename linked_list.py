@@ -38,7 +38,10 @@ class Node:
 
         return head
 
-    def print(self):
+    def print_structure(self):
         if not self.tail:
             return f'{self.data}'
-        return f'{self.data} -> {self.tail.print()}'
+        return f'{self.data} -> {self.tail.print_structure()}'
+
+    def __str__(self):
+        return f'{self.data}'
