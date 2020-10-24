@@ -1,13 +1,13 @@
-from binary_tree import Node
+from binary_tree import BSTNode
 
 
-def is_balanced(root: Node):
+def is_balanced(root: BSTNode):
     if check_height(root) < 0:
         return False
     return True
 
 
-def check_height(node: Node):
+def check_height(node: BSTNode):
     if not node:
         return 0
 

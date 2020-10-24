@@ -1,7 +1,7 @@
-from binary_tree import Node
+from binary_tree import BSTNode
 
 
-def is_route(start: Node, end: Node):
+def is_route(start: BSTNode, end: BSTNode):
     start.visited = True
     queue = [start]
     while queue:

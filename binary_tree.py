@@ -1,4 +1,4 @@
-class Node:
+class BSTNode:
     def __init__(self, data, left=None, right=None):
         self.data = data
         self.left = left
@@ -9,33 +9,37 @@ class Node:
     def adjacent(self):
         return [n for n in (self.left, self.right) if n]
 
-    def print(self):
+    def print_structure(self):
+        string = ""
         current_level = [self]
         height = get_height(self)
-        padding = 2 ** (height - 1) - 1
-        while True:
-            if height == 0:
-                break
+        while height > 0:
             next_level = []
+            padding = 2 ** (height - 1) - 1
             for n in current_level:
-                print(" " * padding, end='')
+                string += " " * padding
                 if not n:
-                    print(" ", end='')
+                    string += " "
+                    next_level.append(None)
+                    next_level.append(None)
                 else:
-                    print(n.data, end='')
+                    string += f'{n.data}'
                     next_level.append(n.left)
                     next_level.append(n.right)
-                print(" " * (padding + 1), end='')
-            print()
+                string += " " * (padding + 1)
+            string += "\n"
             current_level = next_level
             height -= 1
-            padding = 2 ** (height - 1) - 1
+        return string
 
     def traverse(self, traverse_func):
         traverse_func(self)
 
+    def __str__(self):
+        return f'{self.data}'
 
-def get_height(root: Node):
+
+def get_height(root: BSTNode):
     if not root:
         return 0
     return max(get_height(root.left), get_height(root.right)) + 1
