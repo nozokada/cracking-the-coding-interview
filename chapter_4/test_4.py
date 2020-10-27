@@ -6,6 +6,7 @@ from chapter_4.exercise_4_2 import is_route
 from chapter_4.exercise_4_3 import build_bst_from_list
 from chapter_4.exercise_4_4 import create_linked_lists
 from chapter_4.exercise_4_5 import is_bst
+from chapter_4.exercise_4_6 import get_next_node_in_order
 from chapter_4.traversal import do_dfs_r
 
 
@@ -69,3 +70,12 @@ class Test_4_5(unittest.TestCase):
         print(tree.print_structure())
         self.assertTrue(is_bst(bst))
         self.assertFalse(is_bst(tree))
+
+
+class Test_4_6(unittest.TestCase):
+    def test_get_next_node_in_order(self):
+        bst = build_bst_from_list([n for n in range(1, 16)])
+        node = get_next_node_in_order(bst.right.right)
+        next_node = get_next_node_in_order(node)
+        print(bst.print_structure())
+        print(next_node)
