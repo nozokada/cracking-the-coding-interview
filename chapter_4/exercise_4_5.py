@@ -1,4 +1,4 @@
-from binary_tree import BSTNode
+from bst import BSTNode
 
 last_value = float('-inf')
 
