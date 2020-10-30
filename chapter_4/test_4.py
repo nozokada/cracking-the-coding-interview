@@ -7,6 +7,9 @@ from chapter_4.exercise_4_3 import build_bst_from_list
 from chapter_4.exercise_4_4 import create_linked_lists
 from chapter_4.exercise_4_5 import is_bst
 from chapter_4.exercise_4_6 import get_next_node_in_order
+from chapter_4.exercise_4_7 import find_common_ancestor
+from chapter_4.exercise_4_8 import contains_tree
+from chapter_4.exercise_4_9 import find_sum
 from chapter_4.traversal import do_dfs_r
 
 
@@ -79,3 +82,25 @@ class Test_4_6(unittest.TestCase):
         next_node = get_next_node_in_order(node)
         print(bst.print_structure())
         print(next_node)
+
+
+class Test_4_7(unittest.TestCase):
+    def test_find_first_common_ancestor(self):
+        node_1 = BSTNode(4)
+        node_2 = BSTNode(7)
+        tree = BSTNode(1, BSTNode(2, BSTNode(3), node_1), BSTNode(5, BSTNode(6), node_2))
+        self.assertEqual(tree, find_common_ancestor(tree, node_1, node_2))
+
+
+class Test_4_8(unittest.TestCase):
+    def test_contains_tree(self):
+        big_tree = BSTNode(1, BSTNode(2, BSTNode(3), BSTNode(4)), BSTNode(5, BSTNode(6), BSTNode(7)))
+        small_tree = BSTNode(5, BSTNode(6), BSTNode(7))
+        self.assertTrue(contains_tree(big_tree, small_tree))
+
+
+class Test_4_9(unittest.TestCase):
+    def test_find_sum(self):
+        tree = BSTNode(1, BSTNode(2, BSTNode(3), BSTNode(4)), BSTNode(5, BSTNode(6), BSTNode(7)))
+        print(tree.print_structure())
+        find_sum(tree, 3)
