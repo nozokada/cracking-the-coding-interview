@@ -16,27 +16,23 @@ class Node:
         return self.tail == other.tail
 
     def append(self, data):
-        new_node = Node(data)
+        append_me = Node(data)
         n = self
-        while n.tail:
-            n = n.tail
-        n.tail = new_node
-
-        return new_node
-
-    def delete(self, data):
-        head = self
-        if head.data == data:
-            return head.tail
-
-        n = head
-        while n.tail:
-            if n.tail.data == data:
-                n.tail = n.tail.tail
-                return head
+        while n:
+            if not n.tail:
+                n.tail = append_me
+                return append_me
             n = n.tail
 
-        return head
+    def delete(self, delete_me):
+        if self == delete_me:
+            return self.tail
+        n = self
+        while n:
+            if n.tail == delete_me:
+                n.tail = delete_me.tail
+                return self
+            n = n.tail
 
     def print_structure(self):
         if not self.tail:
