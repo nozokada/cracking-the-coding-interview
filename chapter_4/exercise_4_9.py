@@ -1,14 +1,14 @@
-from bst import BSTNode, get_height
+from bst import TreeNode, get_height
 
 
-def find_sum(root: BSTNode, value: int):
+def find_sum(root: TreeNode, value: int):
     path = []
     for i in range(get_height(root)):
         path.append(float('-inf'))
     traverse_and_find_sum(root, value, path, 0)
 
 
-def traverse_and_find_sum(node: BSTNode, value: int, path: list, level: int):
+def traverse_and_find_sum(node: TreeNode, value: int, path: list, level: int):
     if not node:
         return
 

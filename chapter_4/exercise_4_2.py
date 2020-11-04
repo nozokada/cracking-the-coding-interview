@@ -1,7 +1,7 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def is_route(start: BSTNode, end: BSTNode):
+def is_route(start: TreeNode, end: TreeNode):
     start.visited = True
     queue = [start]
     while queue:

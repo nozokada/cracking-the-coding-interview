@@ -1,7 +1,7 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def get_next_node_in_order(node: BSTNode):
+def get_next_node_in_order(node: TreeNode):
     n = node
     if not n:
         return None

@@ -1,4 +1,4 @@
-class BSTNode:
+class TreeNode:
     def __init__(self, data, left=None, right=None, parent=None):
         self.data = data
         self.left = left
@@ -40,7 +40,7 @@ class BSTNode:
         return f'{self.data}'
 
 
-def get_height(root: BSTNode):
+def get_height(root: TreeNode):
     if not root:
         return 0
     return max(get_height(root.left), get_height(root.right)) + 1

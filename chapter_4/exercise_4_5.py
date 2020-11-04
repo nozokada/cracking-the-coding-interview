@@ -1,9 +1,9 @@
-from bst import BSTNode
+from bst import TreeNode
 
 last_value = float('-inf')
 
 
-def is_bst(root: BSTNode):
+def is_bst(root: TreeNode):
     global last_value
 
     if not root:

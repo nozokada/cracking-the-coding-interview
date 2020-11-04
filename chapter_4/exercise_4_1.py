@@ -1,13 +1,13 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def is_balanced(root: BSTNode):
+def is_balanced(root: TreeNode):
     if check_height(root) < 0:
         return False
     return True
 
 
-def check_height(node: BSTNode):
+def check_height(node: TreeNode):
     if not node:
         return 0
 

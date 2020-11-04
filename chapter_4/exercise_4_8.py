@@ -1,14 +1,14 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def contains_tree(t1: BSTNode, t2: BSTNode):
+def contains_tree(t1: TreeNode, t2: TreeNode):
     if not t2:
         return True
 
     return check_sub_tree(t1, t2)
 
 
-def check_sub_tree(r1: BSTNode, r2: BSTNode):
+def check_sub_tree(r1: TreeNode, r2: TreeNode):
     if not r1:
         return False
 
@@ -19,7 +19,7 @@ def check_sub_tree(r1: BSTNode, r2: BSTNode):
     return check_sub_tree(r1.left, r2) or check_sub_tree(r1.right, r2)
 
 
-def check_match_tree(r1: BSTNode, r2: BSTNode):
+def check_match_tree(r1: TreeNode, r2: TreeNode):
     if not r1 and not r2:
         return True
 

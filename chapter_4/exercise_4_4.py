@@ -1,8 +1,8 @@
-from bst import BSTNode
+from bst import TreeNode
 from linked_list import Node
 
 
-def create_linked_lists(root: BSTNode):
+def create_linked_lists(root: TreeNode):
     result = []
     current_linked_list = Node(root)
 

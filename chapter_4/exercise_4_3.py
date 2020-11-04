@@ -1,7 +1,7 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def build_bst_from_list(ascending_list: list, root: BSTNode = None):
+def build_bst_from_list(ascending_list: list, root: TreeNode = None):
     if not ascending_list:
         return root
 
@@ -15,9 +15,9 @@ def build_bst_from_list(ascending_list: list, root: BSTNode = None):
     return root
 
 
-def insert_node(root: BSTNode, parent: BSTNode, data: int):
+def insert_node(root: TreeNode, parent: TreeNode, data: int):
     if not root:
-        return BSTNode(data, parent=parent)
+        return TreeNode(data, parent=parent)
 
     if data < root.data:
         root.left = insert_node(root.left, root, data)

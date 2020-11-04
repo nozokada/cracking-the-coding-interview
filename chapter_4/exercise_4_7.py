@@ -1,14 +1,14 @@
-from bst import BSTNode
+from bst import TreeNode
 
 
-def find_common_ancestor(root: BSTNode, p: BSTNode, q: BSTNode):
+def find_common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode):
     if not is_ancestor(root, p) or not is_ancestor(root, q):
         return None
 
     return find_common_ancestor_helper(root, p, q)
 
 
-def find_common_ancestor_helper(root: BSTNode, p: BSTNode, q: BSTNode):
+def find_common_ancestor_helper(root: TreeNode, p: TreeNode, q: TreeNode):
     if not root:
         return None
 
@@ -25,7 +25,7 @@ def find_common_ancestor_helper(root: BSTNode, p: BSTNode, q: BSTNode):
     return find_common_ancestor_helper(child_side, p, q)
 
 
-def is_ancestor(node: BSTNode, child: BSTNode):
+def is_ancestor(node: TreeNode, child: TreeNode):
     if not node:
         return False
 
