@@ -6,9 +6,7 @@ def sort(data: list):
     left = sort(data[:size // 2])
     right = sort(data[size // 2:])
 
-    i = 0
-    j = 0
-    k = 0
+    i = j = k = 0
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
             data[k] = left[i]
