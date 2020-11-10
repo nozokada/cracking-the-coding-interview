@@ -14,12 +14,6 @@ def find_minimum_index(data: list, start_index: int):
     return min_index
 
 
-def swap(data: list, index_1: int, index_2: int):
-    temp = data[index_1]
-    data[index_1] = data[index_2]
-    data[index_2] = temp
-
-
 list_ = [5, 5, 3, 5, 9, 1, 4, 5]
 print(list_)
 sort(list_)
