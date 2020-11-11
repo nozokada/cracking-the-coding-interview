@@ -7,25 +7,22 @@ def sort(data: list, start_index: int, end_index: int):
     i = start_index
     j = end_index
 
-    while True:
+    while i <= j:
         while data[i] < pivot:
             i += 1
         while data[j] > pivot:
             j -= 1
 
-        if i >= j:
-            break
+        if i <= j:
+            data[i], data[j] = data[j], data[i]
+            i += 1
+            j -= 1
 
-        data[i], data[j] = data[j], data[i]
-
-        i += 1
-        j -= 1
-
-    sort(data, start_index, i - 1)
-    sort(data, j + 1, end_index)
+    sort(data, start_index, j)
+    sort(data, i, end_index)
 
 
-list_ = [5, 5, 3, 5, 9, 1, 4, 5]
+list_ = [8, 7, 6, 5, 4, 3, 2, 1]
 print(list_)
 sort(list_, 0, len(list_) - 1)
 print(list_)
