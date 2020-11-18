@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def find_common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode):

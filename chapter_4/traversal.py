@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def do_dfs_r(root: TreeNode):

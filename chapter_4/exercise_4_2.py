@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def is_route(start: TreeNode, end: TreeNode):

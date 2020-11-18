@@ -1,6 +1,6 @@
 import unittest
 
-from bst import TreeNode
+from binary_tree import TreeNode
 from chapter_4.exercise_4_1 import is_balanced
 from chapter_4.exercise_4_2 import is_route
 from chapter_4.exercise_4_3 import build_bst_from_list

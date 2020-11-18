@@ -1,4 +1,4 @@
-from bst import TreeNode, get_height
+from binary_tree import TreeNode, get_height
 
 
 def find_sum(root: TreeNode, value: int):

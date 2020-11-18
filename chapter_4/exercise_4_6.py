@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def get_next_node_in_order(node: TreeNode):

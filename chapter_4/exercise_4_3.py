@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def build_bst_from_list(ascending_list: list, root: TreeNode = None):

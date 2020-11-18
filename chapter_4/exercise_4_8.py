@@ -1,4 +1,4 @@
-from bst import TreeNode
+from binary_tree import TreeNode
 
 
 def contains_tree(t1: TreeNode, t2: TreeNode):
