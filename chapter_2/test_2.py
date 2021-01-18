@@ -28,6 +28,11 @@ class TestLinkedList(unittest.TestCase):
         another_linked_list = another_linked_list.delete(delete_me)
         self.assertEqual(linked_list, another_linked_list)
 
+    def test_linked_list_reverse(self):
+        linked_list = Node(1, Node(2, Node(3)))
+        another_linked_list = Node(3, Node(2, Node(1)))
+        self.assertEqual(linked_list.reverse(), another_linked_list)
+
 
 class Test_2_1(unittest.TestCase):
     def test_delete_duplicates(self):

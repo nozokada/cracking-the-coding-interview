@@ -34,6 +34,20 @@ class Node:
                 return self
             n = n.tail
 
+    def reverse(self):
+        if not self.tail:
+            return self
+        prev = None
+        curr = self
+
+        while curr:
+            next = curr.tail
+            curr.tail = prev
+
+            prev = curr
+            curr = next
+        return prev
+
     def print_structure(self):
         if not self.tail:
             return f'{self.data}'
